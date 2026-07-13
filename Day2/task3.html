@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task3</title>
+  </head>
+  <body>
+    <h2 id="output"></h2>
+    <script>
+      var name = prompt("enter your name : ");
+      var birthYear = +prompt("enter your birth year : ");
+      var student = confirm("are you a student ?");
+      var currentYear = new Date().getFullYear();
+      var age = currentYear - birthYear;
+      var old;
+      var message = "";
+      console.log(age);
+      if (age < 13) {
+        old = "Kid";
+        console.log("Kid");
+      } else if (age >= 13 && age < 17) {
+        old = "Teen";
+        console.log("Teen");
+      } else if (age >= 18 && age < 59) {
+        old = "Adult";
+        console.log("Adult");
+      } else if (age >= 60) {
+        old = "Senior";
+        console.log("Senior");
+      }
+      if (student) {
+        console.log("Don't forget to study hard!");
+        message = "Don't forget to study hard!";
+      }
+      console.log(
+        "Hello " +
+          name +
+          " you are " +
+          age +
+          " years old" +
+          "\n" +
+          "Category: " +
+          old +
+          "\n" +
+          message,
+      );
+      document.getElementById("output").innerText =
+        "Hello " +
+        name +
+        " you are " +
+        age +
+        " years old" +
+        "\n" +
+        "Category: " +
+        old +
+        "\n" +
+        message;
+
+      alert(
+        "Hello " +
+          name +
+          " you are " +
+          age +
+          " years old" +
+          "\n" +
+          "Category: " +
+          old +
+          "\n" +
+          message,
+      );
+    </script>
+  </body>
+</html>

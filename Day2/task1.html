@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task1</title>
+</head>
+<body>
+    <p>username</p>
+    <input type="text" id="username" style="margin-bottom: 30px;" > <br>
+    <p>password</p>
+    <input type="password" id="pass" style="margin-bottom: 30px;"><br>
+    <button type="submit" style="padding: .4rem;" onclick="validate()">submit</button>
+    <script>
+        function validate () {
+            const userName=document.getElementById('username').value
+            const password=document.getElementById('pass').value
+            if(userName ===''){
+                alert('username required')
+            }else if(!isNaN(userName)){
+                alert('username have to be text')
+            }else if(password.length < 8){
+                alert("Password must be at least 8 characters")
+            }
+            alert("Success")
+        }
+    </script>
+</body>
+</html>

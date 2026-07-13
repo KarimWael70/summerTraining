@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task2</title>
+  </head>
+  <body>
+    <script>
+      var naame = prompt("enter your name: ");
+      var age = +prompt("enter your age: ");
+      var yearsOfExperience = +prompt("enter years of experience: ");
+      var selfRating = +prompt("rate yourself as an emplyee (1-10)");
+      var baseSalary = 1000;
+      var bonus;
+      var finalSalary;
+      if (yearsOfExperience < 2) {
+        document.write("You are Junior <br>");
+        bonus = 0.1 * baseSalary;
+        finalSalary = baseSalary + bonus;
+        document.write("Final Salary: " + finalSalary + "<br>");
+      } else if (yearsOfExperience >= 2 && yearsOfExperience < 5){
+        bonus = 0.15 * baseSalary;
+        finalSalary = baseSalary + bonus; 
+        document.write("You are Mid-Level <br>");
+        document.write("Final Salary: " + finalSalary + "<br>");
+      } else if (yearsOfExperience >= 5 && yearsOfExperience < 10) {
+        bonus = 0.2 * baseSalary;
+        finalSalary = baseSalary + bonus; 
+        document.write("You are Senior<br>");
+        document.write("Final Salary: " + finalSalary + "<br>");
+      } else if (yearsOfExperience >= 10) {
+        bonus = 0.2 * baseSalary;
+        finalSalary = baseSalary + bonus; 
+        document.write("You are an Expert<br>");
+        document.write("Final Salary: " + finalSalary + "<br>");
+      }
+      if (selfRating < 1 || selfRating > 10) {
+        document.write("Invalid Input for Self Raiting Field <br>");
+      } else
+        switch (true) {
+          case selfRating >= 9:
+            document.write("Excellent <br>");
+            break;
+
+          case selfRating >= 7:
+            document.write("Good <br>");
+            break;
+
+          case selfRating >= 5:
+            document.write("Average <br>");
+            break;
+          default:
+            document.write("Needs Improvement <br>");
+        }
+        var currentHour = new Date().getHours();
+        if (currentHour >= 9 && currentHour < 18) {
+            document.write("Day Shift");
+        } else {
+            document.write("Night Shift");
+        }
+    </script>
+  </body>
+</html>

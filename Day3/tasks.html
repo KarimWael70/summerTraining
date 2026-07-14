@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <script>
+      //PART A
+      var name = "Karim Wael";
+      var onlyLetters = name.replace(" ", "");
+      console.log(name.length);
+      console.log(onlyLetters.length);
+
+      var sentence = "I am learning JavaScript";
+      console.log(sentence.toUpperCase());
+      console.log(sentence.toLowerCase());
+
+      var email = "student@nti.com";
+      console.log(email.includes("@"));
+
+      var word = "JavaScript";
+      console.log(word[0]);
+      console.log(word[word.length - 1]);
+
+      var sent = "This is a bad day";
+      console.log(sent.replace("bad", "good"));
+
+      var text = "I love coding";
+      var words = text.split(" ");
+      var result = words.join("-");
+      console.log(result);
+
+      var ttext = " nti egypt training ";
+      console.log(ttext.trim().toUpperCase().replace("EGYPT", "CAIRO"));
+
+      //PART B
+      var str = "45.8";
+      console.log(+str);
+
+      var num = 7.6;
+      console.log(Math.round(num));
+      console.log(Math.floor(num));
+      console.log(Math.ceil(num));
+
+      var largest = Math.max(12, 5, 28, 9);
+      var smallest = Math.min(12, 5, 28, 9);
+      console.log("largest number:", largest);
+      console.log("smallest number:", smallest);
+
+      var randomNum = Math.floor(Math.random() * 20) + 1;
+      console.log(randomNum);
+
+      var num2 = 19.4567;
+      console.log(num2.toFixed(2));
+
+      var rando1 = Math.floor(Math.random() * 50) + 1;
+      var rando2 = Math.floor(Math.random() * 50) + 1;
+      var rando3 = Math.floor(Math.random() * 50) + 1;
+      var rando4 = Math.floor(Math.random() * 50) + 1;
+      var rando5 = Math.floor(Math.random() * 50) + 1;
+      console.log(
+        "largest number: ",
+        Math.max(rando1, rando2, rando3, rando4, rando5),
+      );
+      console.log(
+        "smallest number: ",
+        Math.min(rando1, rando2, rando3, rando4, rando5),
+      );
+      var sum = rando1 + rando2 + rando3 + rando4 + rando5;
+      console.log("Average: ", (sum / 5).toFixed(2));
+
+      //PART C
+      for (var i = 1; i < 21; i++) {
+        console.log(i);
+      }
+
+      for (var i = 1; i < 16; i++) {
+        if (i % 2 != 0) {
+          console.log(i);
+        }
+      }
+
+      var count = 10;
+      while (count >= 1) {
+        console.log(count);
+        count--;
+      }
+
+      var names = ["Sara", "Omar", "Mona", "Youssef"];
+      for (var student of names) {
+        console.log(name);
+      }
+
+      for (var i = 1; i <= 10; i++) {
+        if (i == 7) {
+          break;
+        }
+        console.log(i);
+      }
+
+      for (var i = 1; i <= 3; i++) {
+        for (var j = 1; j <= 3; j++) {
+          console.log(i + " * " + j + " = " + i * j);
+        }
+      }
+
+      for (var i = 1; i <= 30; i++) {
+        if (i === 25) {
+          break;
+        }
+        if (i % 3 == 0) {
+          continue;
+        }
+        console.log(i);
+      }
+
+      //PART D
+      var wword = "HELLO";
+      for (var i = 0; i < wword.length; i++) {
+        console.log(wword[i]);
+      }
+
+      var arr = [10, 20, 30, 40];
+      var ssum = 0;
+      for (var i = 0; i < arr.length; i++) {
+        ssum += arr[i];
+      }
+      console.log("TOTAL: ", ssum);
+
+      var sentence2 = "JavaScript is amazing and awesome";
+      var count = 0;
+      sentence2 = sentence2.toLowerCase();
+      for (var i = 0; i < sentence2.length; i++) {
+        if (sentence2[i] == "a") {
+          count++;
+        }
+      }
+      console.log(count);
+
+      var arr2 = [70, 85, 92, 60, 77, 88];
+      for (var i = 0; i < arr2.length; i++) {
+        if (arr2[i] % 2 == 0) {
+          console.log(arr2[i]);
+        }
+      }
+
+      for (var i = 1; i <= 4; i++) {
+        var stars = "";
+        for (var j = 1; j <= i; j++) {
+          stars += "* ";
+        }
+        console.log(stars);
+      }
+
+      var namess = ["ahmed", "sara", "omar", "laila", "hassan"];
+      var countt = 0;
+      for (var i = 0; i < namess.length; i++) {
+        var upperName = namess[i].toUpperCase();
+        if (upperName.startsWith("S") || upperName.startsWith("A")) {
+          console.log(upperName);
+          countt++;
+        }
+      }
+      console.log("matched names:", countt);
+    </script>
+  </body>
+</html>

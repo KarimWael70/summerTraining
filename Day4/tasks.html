@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 4 tasks</title>
+  </head>
+  <body>
+    <script>
+      var users = [
+        { name: "Ali", city: "CAI" },
+        { name: "Sara", city: "GZA" },
+        { name: "Mona", city: "CAI" },
+        { name: "Karim" },
+      ];
+      var city = {};
+      for (var i = 0; i < users.length; i++) {
+        var item = users[i];
+        if (!city[item.city]) {
+          city[item.city] = [];
+        }
+        city[item.city].push(item);
+      }
+      console.log(city);
+
+      //Part A — Objects
+      var car = { brand: "BMW", model: "X5", year: 2020, color: "red" };
+      console.log(car);
+      console.log(car.brand);
+      console.log(car["year"]);
+      car.color = "black";
+      car.price = 50000;
+      console.log(car);
+      delete car.year;
+      console.log(car.year); // undefined ,since we removed it from the object
+
+      var student = {
+        "student-name": "Sara",
+        age: 20,
+      };
+      console.log(student["student-name"]);
+
+      var book = {
+        title: "Dune",
+        author: {
+          firstName: "Frank",
+          lastName: "Herbert",
+        },
+      };
+      console.log(book.author.lastName);
+
+      var employee = { name: "Ali", age: 25, city: "Cairo" };
+      console.log(Object.keys(employee));
+      console.log(Object.values(employee));
+      console.log(employee.hasOwnProperty("job"));
+
+      var settings = { theme: "dark", language: "en" };
+      Object.freeze(settings);
+      settings.theme = "light";
+      settings.fontSize = "16px";
+      console.log(settings); // { theme: "dark", language: "en" } no change happen
+
+      //Part B — Arrays Basics
+      var cities = ["Cairo", "Giza", "Alexandria", "Aswan", "Luxor"];
+      console.log(cities);
+      console.log(cities.length);
+      console.log(cities[1]);
+      console.log(cities[2]);
+      console.log(cities[cities.length - 1]);
+      cities.push("Mansoura");
+      cities.unshift("Tanta");
+      console.log(cities);
+      cities.pop();
+      cities.shift();
+      console.log(cities);
+
+      var langs = ["HTML", "CSS", "JS", "React"];
+      console.log(langs.indexOf("JS"));
+      console.log(langs.includes("Python"));
+
+      var items = ["pen", "book", "bag"];
+      items.forEach(function (item, index) {
+        console.log(item, "Index: ", index);
+      });
+
+      var colors = ["red", "green", "blue", "yellow"];
+      for (var color of colors) {
+        if (color === "blue") {
+          break;
+        }
+        console.log(color);
+      }
+
+      var letters = ["A", "B", "C"];
+      letters.push("D");
+      letters.push("E");
+      letters.shift();
+      console.log(letters, "Length: ", letters.length);
+
+      //Part C — Arrays Methods
+      var fruits = ["apple", "banana", "cherry"];
+      var uppercaseFruits = fruits.map(function (fruit) {
+        return fruit.toUpperCase();
+      });
+      console.log(fruits);
+      console.log(uppercaseFruits);
+
+      var nums = [10, 55, 30, 80, 45, 90];
+      console.log(
+        nums.filter(function (num) {
+          return num > 50;
+        }),
+      );
+
+      var citis = ["Cairo", "Giza", "Alex", "Aswan"];
+      var aCitis = citis.find(function (city) {
+        return city.startsWith("A");
+      });
+      console.log(aCitis, "Index: ", citis.indexOf(aCitis));
+
+      var lletters = ["a", "b", "c", "d", "e"];
+      console.log(lletters);
+      console.log(lletters.slice(1, 4));
+
+      var arr = ["one", "two", "three", "four", "five"];
+      var removed = arr.splice(1, 2);
+      console.log("Removed items:", removed);
+      console.log(arr);
+
+      var numberss = [40, 100, 1, 5, 25];
+      numberss.sort(function (a, b) {
+        return a - b;
+      });
+      console.log(numberss);
+
+      var ages = [16, 21, 17, 19];
+      var hasAdult = ages.some(function (age) {
+        return age >= 18;
+      });
+      var allAdults = ages.every(function (age) {
+        return age >= 18;
+      });
+      console.log(hasAdult);
+      console.log(allAdults);
+
+      var numbeers = [5, 10, 15, 20];
+      var total = numbeers.reduce(function (sum, current) {
+        return sum + current;
+      }, 0);
+      console.log(total);
+
+      //Part D — Mix (Objects + Arrays)
+      var students = [
+        { name: "Omar", grade: 80 },
+        { name: "Mona", grade: 90 },
+        { name: "Ali", grade: 70 },
+      ];
+      for (var i = 0; i < students.length; i++) {
+        console.log("Name:", students[i].name);
+        console.log("Grade:", students[i].grade);
+      }
+      var result = students
+        .filter(function (student) {
+          return student.grade >= 80;
+        })
+        .map(function (student) {
+          return student.name;
+        });
+      console.log(result);
+
+      var products = [
+        { name: "Pen", price: 10 },
+        { name: "Book", price: 50 },
+        { name: "Bag", price: 25 },
+      ];
+      var total = products.reduce(function (sum, product) {
+        return sum + product.price;
+      }, 0);
+      console.log("Total Price:", total);
+
+      var arr = ["js", "html", "css", "js", "react", "js"];
+      var count = 0;
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === "js") {
+          count++;
+        }
+      }
+      console.log("js count:", count);
+
+      var classroom = {
+        teacher: "Mr. Ahmed",
+        students: ["Ali", "Sara", "Omar", "Mona"],
+      };
+      console.log("teacher:", classroom.teacher);
+      console.log("number of students:", classroom.students.length);
+      console.log(
+        "last student:",
+        classroom.students[classroom.students.length - 1],
+      );
+
+      var arrr = [
+        { id: 1, title: "Pen", price: 10 },
+        { id: 2, title: "Book", price: 50 },
+        { id: 3, title: "Bag", price: 25 },
+      ];
+      var titles = arrr.map(function (product) {
+        return product.title.toUpperCase();
+      });
+      console.log(titles);
+      var lowPrice = arrr.filter(function (item) {
+        return item.price < 30;
+      });
+      console.log(lowPrice);
+
+      var totalPrice = arrr.reduce(function (sum, current) {
+        return sum + current.price;
+      }, 0);
+      console.log("total price : " + totalPrice);
+    </script>
+  </body>
+</html>

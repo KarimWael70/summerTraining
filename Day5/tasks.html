@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 5 Tasks</title>
+  </head>
+  <body>
+    <script>
+      //TAsk 1
+      function multiply(a, b) {
+        return a * b;
+      }
+      function calculate(a, b, op) {
+        return op(a, b);
+      }
+      function displayResult(sol) {
+        console.log(sol);
+      }
+
+      var ans = calculate(8, 3, multiply);
+      //displayResult(ans);
+
+      //Task 2
+      function greetUser() {
+        let count = 1;
+        var counter = setInterval(function () {
+          console.log(count);
+          count++;
+        }, 1000);
+        setTimeout(function () {
+          clearInterval(counter);
+          console.log("Hello, user");
+        }, 3000);
+      }
+      //greetUser();
+
+      function countdown() {
+        let count = 10;
+        var counte = setInterval(function () {
+          console.log(count);
+          count--;
+          if (count == 0) {
+            console.log("tims 's up");
+            clearInterval(counte);
+          }
+        }, 1000);
+      }
+      //countdown();
+
+      function countdown5() {
+        let count = 10;
+        var counte = setInterval(function () {
+          console.log(count);
+          count--;
+        }, 1000);
+        setTimeout(function () {
+          clearInterval(counte);
+          console.log("stop after 5 secs");
+        }, 5000);
+      }
+      //countdown5();
+
+      var timeout = setTimeout(function () {
+        console.log("This will be cleared! after 5 seconds");
+      }, 5000);
+      clearTimeout(timeout);
+      //console.log("timeout cacelled");
+
+      //Task 3
+      var items = [];
+
+      function creat(item) {
+        items.push(item);
+        console.log(item + " is added to the array items");
+      }
+
+      function read(arr) {
+        console.log("Everything in the array : ");
+
+        for (let i = 0; i < arr.length; i++) {
+          console.log(arr[i]);
+        }
+      }
+      creat("item1");
+      creat("item2");
+      creat("item3");
+      read(items);
+
+      function update(index, item) {
+        if (index >= 0 && index < items.length) {
+          items[index] = item;
+          console.log("array updated");
+        } else {
+          console.log("invalid indexx");
+        }
+      }
+      update(1, "notitem");
+      read(items);
+      function remove(index) {
+        if (index >= 0 && index < items.length) {
+          items.splice(index, 1);
+          console.log("item removed");
+        } else {
+          console.log("invalid indexx");
+        }
+      }
+      remove(1);
+      read(items);
+    </script>
+  </body>
+</html>

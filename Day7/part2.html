@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>part2</title>
+  </head>
+  <body>
+    <script>
+      //part A
+      const fruits = ["apple", "banana", "cherry"];
+      for (const index in fruits) {
+        console.log(index, fruits[index]);
+      }
+      for (const fruit of fruits) {
+        console.log(fruit);
+      }
+      for (const [index, value] of fruits.entries()) {
+        console.log(`${index} -> ${value}`);
+      }
+
+      const text = "NTI";
+      for (const index in text) {
+        console.log(index, text[index]);
+      }
+      for (const char of text) {
+        console.log(char);
+      }
+
+      const user = { name: "Ali", age: 25 };
+      for (const [key, value] of Object.entries(user)) {
+        console.log(key, value);
+      }
+
+      const numbers = [1, 2, 3, 4, 5, 6];
+      for (const num of numbers) {
+        if (num === 3) {
+          continue;
+        }
+        if (num === 5) {
+          break;
+        }
+        console.log(num);
+      }
+
+      //Part B
+      const exMap = new Map();
+      const userObject = { id: 1 };
+      exMap.set("name", "Ahmed");
+      exMap.set("100", "ID");
+      exMap.set(userObject, "UserObject");
+      console.log(typeof exMap);
+      console.log(exMap.size);
+      console.log(exMap.get("name"));
+      console.log(exMap.has("age"));
+      //exMap.delete("100");
+      // console.log(exMap.has("100"));
+      for (const [key, value] of exMap) {
+        console.log(key, value);
+      }
+      for (const key of exMap.keys()) {
+        console.log(key);
+      }
+      for (const value of exMap.values()) {
+        console.log(value);
+      }
+      exMap.clear();
+      console.log(exMap.size);
+
+      //Part C
+      var exSet = new Set();
+      exSet.add(10);
+      exSet.add(21);
+      exSet.add(2);
+      exSet.add(3);
+      exSet.add(2);
+      exSet.add(10);
+      console.log(exSet);
+      console.log(exSet.size); //the size not 6 cause set only add unique items
+      exSet.delete(3);
+      console.log(exSet.has(3));
+      for (const value of exSet.values()) {
+        console.log(value);
+      }
+      for (const entry of exSet.entries()) {
+        console.log(entry); // show thr number twice cause sets dont have keys only values
+      }
+
+      const nums = [1, 2, 2, 3, 4, 4, 5];
+      const uniqueNums = [...new Set(nums)];
+      console.log(uniqueNums);
+
+      // Set stores only unique values adn doesnt have indexs unlike arrays
+
+      //part D
+      // const name = "Ahmed";
+      // const age = 25;
+      // const person1 = {
+      //   name: name,
+      //   age: age,
+      // };
+      // const person2 = {
+      //   name,
+      //   age,
+      // };
+      // console.log(person1);
+      // console.log(person2);
+
+      const calculator = {
+        add(a, b) {
+          return a + b;
+        },
+        multiply(a, b) {
+          return a * b;
+        },
+      };
+      console.log(calculator.add(1, 1));
+      console.log(calculator.multiply(0, 3));
+
+      const key1 = "email";
+      const key2 = "phone";
+      const contact = {
+        [key1]: "kkk@exa.com",
+        [key2]: "0123456780",
+        ["user_" + 99]: "special user",
+      };
+      console.log(contact);
+
+      function buildPayload(type, value) {
+        return {
+          type,
+          value,
+          createdAt: new Date().toISOString(),
+          print() {
+            console.log(`${type}: ${value}`);
+          },
+          [type + "_flag"]: true,
+        };
+      }
+      const payload = buildPayload("ordEr", 12345);
+      console.log(payload);
+      payload.print();
+
+      let a = 10;
+      let b = a;
+      b++;
+      console.log(a, b); // changing b does not impact a
+
+      const person1 = { name: "SSS", child: { age: 5 } };
+      const person2 = person1;
+      person2.name = "AAA";
+      console.log(person1.name); //person1 and person2 refer to the same object
+
+      // const original = { x: 1, nested: { y: 2 } };
+      // const copy = { ...original };
+      // copy.x = 100;
+      // copy.nested.y = 999;
+      // console.log(original);
+      // console.log(copy); // original.x stays 1 since its primitive but the nested.y change because this is a shallow copy
+
+      const original = { x: 1, nested: { y: 2 } };
+      const copy = Object.assign({}, original);
+      copy.nested.y = 500;
+      console.log(original);
+      console.log(copy);
+
+      const deepSrc = {
+        n: 1,
+        d: new Date(),
+        arr: [1, { k: 2 }],
+        set: new Set([1, 2, 3]),
+      };
+      const deepClone = structuredClone(deepSrc);
+      deepClone.arr[1].k = 999;
+      console.log(deepSrc.arr[1].k);
+      console.log(deepClone.arr[1].k);
+
+      const arr1 = [1, [2, 3]];
+      const arr3 = [...arr1]; // creat a shallow copy
+      arr1[1][0] = 99;
+      console.log(arr3[1][0]);
+      const arr4 = structuredClone(arr1); //creates a deep copy
+      arr1[1][0] = 500;
+      console.log(arr1);
+      console.log(arr4);
+
+      // const m1 = new Map([["k", { v: 1 }]]);
+      // const m2 = new Map(m1);
+      // m2.get("k").v = 42;
+      // console.log(m1.get("k").v); //Map(m1) is a shallow copy , the object stored is shared between both of the maps
+
+      const m1 = new Map([["k", { v: 42 }]]);
+      const m3 = structuredClone(m1);
+      m3.get("k").v = 7;
+      console.log(m1.get("k").v);
+      console.log(m3.get("k").v);
+
+      const ids = [101, 102, 101, 103, 102, 104];
+      const uniqueIds = new Set(ids);
+      const products = new Map();
+      for (const id of uniqueIds) {
+        products.set(id, "found");
+      }
+      console.log(products.size);
+      for (const entry of products.entries()) {
+        console.log(entry);
+      }
+
+      const name = "JavaScript";
+      const level = "Beginner";
+      const key = "duration";
+      const course = {
+        name,
+        level,
+        info() {
+          return this.name - this.level;
+        },
+        [key]: "70 Days",
+      };
+      for (const [key, value] of Object.entries(course)) {
+        console.log(key, value);
+      }
+
+      let personA = {
+        name: "SSSSSSS",
+        son: {
+          age: 5,
+        },
+      };
+      let personB = personA;
+      let personC = structuredClone(personA);
+      personB.name = "Ahmed";
+      personC.son.age = 10;
+      console.log(personA);
+      console.log(personB);
+      console.log(personC);
+    </script>
+  </body>
+</html>

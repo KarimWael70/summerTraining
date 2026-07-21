@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #f4f7fb;
+  color: #1e293b;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.container .userForm {
+  display: flex;
+  background-color: #ffffff;
+  height: 300px;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.row input {
+  background-color: #f8fafc;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.row input::placeholder {
+  color: #94a3b8;
+}
+
+.row input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.row input[type="text"] {
+  width: 220px;
+}
+
+.row input[type="number"] {
+  width: 120px;
+}
+
+.row span,
+.row label {
+  color: #334155;
+}
+.graduatedGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.graduatedGroup span {
+  margin-right: 9px;
+}
+
+.submitBtnContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.searchBtn {
+  display: inline;
+  margin: 20px auto 0;
+  padding: 8px 20px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.submitBtn {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 25px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.searchBtn:hover,
+.submitBtn:hover {
+  background-color: #1d4ed8;
+  cursor: pointer;
+}
+
+.container .userTable {
+  margin-top: 30px;
+  background-color: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+table {
+  border-collapse: collapse;
+  width: 700px;
+}
+
+th,
+td {
+  border: 1px solid #e2e8f0;
+  padding: 12px;
+  text-align: center;
+}
+
+thead {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+tbody tr:hover {
+  background-color: #eef4ff;
+}
+td:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.deleteBtn,
+.editBtn,
+.saveBtn,
+.cancelBtn {
+  display: inline-block;
+  margin: 0;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.deleteBtn {
+  background-color: #ef4444;
+}
+
+.deleteBtn:hover {
+  background-color: #dc2626;
+}
+
+.editBtn {
+  background-color: #10b981;
+}
+
+.editBtn:hover {
+  background-color: #059669;
+}
+.searchInput,
+.inputFirstName,
+.inputLastName,
+.inputAge {
+  background-color: #f8fafc;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 0;
+}
+
+.inputFirstName::placeholder,
+.inputLastName::placeholder,
+.inputAge::placeholder {
+  color: #94a3b8;
+}
+.searchInput {
+  margin-top: 20px;
+}
+.searchInput:focus,
+.inputFirstName:focus,
+.inputLastName:focus,
+.inputAge:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.inputFirstName,
+.inputLastName {
+  width: 220px;
+}
+
+.inputAge {
+  width: 120px;
+}
+
+.saveBtn {
+  background-color: #10b981;
+}
+
+.saveBtn:hover {
+  background-color: #059669;
+}
+
+.cancelBtn {
+  background-color: #ef4444;
+}
+
+.cancelBtn:hover {
+  background-color: #dc2626;
+}
+.filterBtnContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+.filterBtn {
+  padding: 6px 12px;
+  border: none;
+  background-color: #2563eb;
+  border-radius: 7px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+.filterOption {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 7px;
+  background-color: #f8fafc;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.filterOption:hover {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}

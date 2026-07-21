@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="userForm">
+        <form action="" id="userForm">
+          <div class="row">
+            <input
+              type="text"
+              class="firstName"
+              placeholder="First Name"
+              id="firstName"
+            />
+            <input
+              type="text"
+              class="lastName"
+              placeholder="Last Name"
+              id="lastName"
+            />
+          </div>
+          <div class="row">
+            <input
+              type="number"
+              class="age"
+              placeholder="Age"
+              min="1"
+              max="100"
+              id="age"
+            />
+            <div class="graduatedGroup">
+              <span>Graduated?</span>
+              <input
+                type="radio"
+                name="graduated"
+                id="graduatedYes"
+                value="yes"
+              />
+              <label for="graduatedYes">Yes</label>
+              <input
+                type="radio"
+                name="graduated"
+                id="graduatedNo"
+                value="no"
+              />
+              <label for="graduatedNo">No</label>
+            </div>
+          </div>
+
+          <div class="submitBtnContainer">
+            <button type="submit" class="submitBtn" id="submitBtn">
+              Add User
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="searchBar">
+        <input
+          type="text"
+          class="searchInput"
+          placeholder="Search by name"
+          id="searchInput"
+        />
+        <button class="searchBtn" id="searchBtn">Search</button>
+      </div>
+      <div class="filterBtnContainer">
+        <select class="filterBtn" id="filterBtn">
+          <option class="filterOption" value="all">All Users</option>
+          <option class="filterOption" value="yes">Graduated</option>
+          <option class="filterOption" value="no">Not Graduated</option>
+        </select>
+      </div>
+      <div class="userTable">
+        <table id="user">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Graduated</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,3 +1,0 @@
-I @switch/@case/@default for the status alerts.
-The page also includes search filtering, clear/reset actions, and nested @if badges for stock status.olation, property binding, event binding, two-way binding, class binding, and style binding.
-I used @if/@else for the login state, @for/@empty for the product 
